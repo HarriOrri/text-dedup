@@ -310,6 +310,7 @@ if __name__ == "__main__":  # pragma: no cover
             gc.collect()
             # Print out groups if parameter is added
             if args.show_clusters:
+                df = ds.to_pandas()
                 grouped_df = df.groupby('__cluster__')
                 
                 for key, item in grouped_df:
