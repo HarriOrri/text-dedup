@@ -310,8 +310,9 @@ if __name__ == "__main__":  # pragma: no cover
             gc.collect()
             # Print out groups if parameter is added
             if args.show_clusters:
+                print(ds)
                 df = ds.to_pandas()
-                
+                print(df)
                 df = df.sort_values(by=['__cluster__'])
                 df = df[['__cluster__','SHEET_INT','COMBINEDTEXT']]
                 df.to_json(r'grouped_dataset.json')
