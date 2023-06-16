@@ -109,6 +109,7 @@ def add_minhash_args(parser: argparse.ArgumentParser) -> argparse.ArgumentParser
         default=None,
         help="Number of rows per band",
     )
+    parser.add_argument("--show_clusters", action=argparse.BooleanOptionalAction, help="Print out all clusters from dataset", default=False),
 
     return parser
 
