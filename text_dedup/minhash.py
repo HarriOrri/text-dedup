@@ -317,7 +317,7 @@ if __name__ == "__main__":  # pragma: no cover
                 print(df)
                 df = df[['__cluster__','SHEET_INT','COMBINEDTEXT']]
                 print(df)
-                df.to_json(r'grouped_dataset.json')
+                df.to_csv(r'grouped_dataset.csv')
 
             # This is where the deduplication happens
             # Since there is no easy groupby in datasets
