@@ -308,6 +308,12 @@ if __name__ == "__main__":  # pragma: no cover
             )
             gc.enable()
             gc.collect()
+            # Print out groups if parameter is added
+            if args.show_clusters:
+                grouped_df = df.groupby('__cluster__')
+                
+                for key, item in grouped_df:
+                    print(grouped_df.get_group(key), "\n\n")
             # This is where the deduplication happens
             # Since there is no easy groupby in datasets
             # I will use this simple filter for now
