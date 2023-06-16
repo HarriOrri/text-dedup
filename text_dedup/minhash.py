@@ -311,11 +311,10 @@ if __name__ == "__main__":  # pragma: no cover
             # Print out groups if parameter is added
             if args.show_clusters:
                 df = ds.to_pandas()
-                grouped_df = df.groupby('__cluster__')
-
-                grouped_df = grouped_df.sort_values(by=['__cluster__'])
-                grouped_df = grouped_df[['__cluster__','SHEET_INT','COMBINEDTEXT']]
-                grouped_df.to_json(r'grouped_dataset.json')
+                
+                df = df.sort_values(by=['__cluster__'])
+                df = df[['__cluster__','SHEET_INT','COMBINEDTEXT']]
+                df.to_json(r'grouped_dataset.json')
 
             # This is where the deduplication happens
             # Since there is no easy groupby in datasets
