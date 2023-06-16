@@ -314,7 +314,9 @@ if __name__ == "__main__":  # pragma: no cover
                 df = ds.to_pandas()
                 print(df)
                 df = df.sort_values(by=['__cluster__'])
+                print(df)
                 df = df[['__cluster__','SHEET_INT','COMBINEDTEXT']]
+                print(df)
                 df.to_json(r'grouped_dataset.json')
 
             # This is where the deduplication happens
