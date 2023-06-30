@@ -313,7 +313,7 @@ if __name__ == "__main__":  # pragma: no cover
                 df = ds.to_pandas()
                 df = df.sort_values(by=['__cluster__'])
                 df = df[['__cluster__','SHEET_INT',args.column]]
-                df.to_csv(r'grouped_dataset.csv', index=False, escapechar='\\')
+                df.to_csv(args.path + r'grouped_dataset.csv', index=False, escapechar='\\')
 
             # This is where the deduplication happens
             # Since there is no easy groupby in datasets
